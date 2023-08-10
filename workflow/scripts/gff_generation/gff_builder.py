@@ -16,6 +16,7 @@
 
 import os
 
+import numpy as np
 import pandas as pd
 
 pd.options.mode.chained_assignment = None  # default='warn'
@@ -95,6 +96,11 @@ def protein_report_processing(
             start = temp_data["protein_start"][i]
             end = temp_data["protein_end"][i]
             strand = temp_data["strand"][i]
+
+        if not len(sc) or np.all(np.isnan(sc)):
+            sc = None
+        else:
+            sc = np.nanmax(sc)
 
         if len(set(unambiguous_peptides)) == 0 and len(set(ambiguous_peptides)) >= 1:
             all_info.append(
