@@ -14,6 +14,11 @@ CLUSTER_REPORT = os.path.join(ASSEMBLIES_FOLDER, "databases/cluster_report.txt")
 STUDY       = os.environ.get("STUDY", config["parameters"]["study"])
 OUTPUTDIR   = config["outputdir"]
 
+try:
+    input_dir = Path(config["parameters"]["input_dir"]).resolve()
+except:
+    input_dir = None
+
 rule generate_db:
     input:
         sample_metadata=SAMPLEINFO_FILE
@@ -24,7 +29,7 @@ rule generate_db:
         cluster_rpt=CLUSTER_REPORT
     params:
         study=STUDY,
-        input_dir=Path(config["parameters"]["input_dir"]).resolve(),
+        input_dir=input_dir,
         ver=config["parameters"]["mgnify_version"],
         output_dir=OUTPUTDIR,
         db_size=config["parameters"]["db_size"]
