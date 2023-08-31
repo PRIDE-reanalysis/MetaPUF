@@ -103,7 +103,6 @@ def main():  # noqa: C901
     logging.info(f"Will read samples info from {args.metadata}")
     samples = pd.read_csv(args.metadata, sep=",")
 
-    os.chdir(args.output_dir)
     if args.study:
         logging.info(f"Will download data from MGnify API for study {args.study}")
         fd.check_study_accession(args.study)
@@ -115,11 +114,13 @@ def main():  # noqa: C901
                 "-p ",
                 args.ver,
                 "-g sequence_data",
+                "-o ",
+                assembly_folder,
             ]
         )
         subprocess.call(cmd_get_data, shell=True)
         sequence_dir = (
-            args.output_dir + "/" + args.study + "/" + args.ver + "/sequence_data"
+            assembly_folder + "/" + args.study + "/" + args.ver + "/sequence_data"
         )
 
     elif args.input_dir:
