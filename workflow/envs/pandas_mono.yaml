@@ -5,4 +5,4 @@ channels:
   - defaults
 dependencies:
   - mono
-  - pandas=2.0.3
+  - pandas
