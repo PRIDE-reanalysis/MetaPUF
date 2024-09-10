@@ -14,7 +14,7 @@ SEARCHGUI_ZIP  = expand("{output}/searchgui/{fname}_searchgui.zip", output=confi
 
 searchgui_jarname = expand(
     config["searchgui"]["jar"],
-    version = config["searchgui"]["version"]
+    version = "3.3.20"
 )
 
 searchgui_tooldir = config['searchgui']['tooldir']
@@ -27,7 +27,7 @@ searchgui_path = expand(
 
 rule download_searchgui:
     input:
-        zip=HTTP.remote(expand(config['searchgui']['url'], version=config['searchgui']['version']), keep_local=False)
+        zip=HTTP.remote(expand(config['searchgui']['url'], version="3.3.20"), keep_local=False)
     output:
         jar=searchgui_path
     params:
