@@ -13,7 +13,7 @@ HTTP = HTTPRemoteProvider()
 
 peptideshaker_jarname = expand(
     config["peptideshaker"]["jar"],
-    version = config["peptideshaker"]["version"]
+    version = "1.16.45"
 )
 
 peptideshaker_tooldir = config['peptideshaker']['tooldir']
@@ -26,7 +26,7 @@ peptideshaker_path = expand(
 
 rule download_peptideshaker:
     input:
-        zip=HTTP.remote(expand(config['peptideshaker']['url'], version=config['peptideshaker']['version']), keep_local=False)
+        zip=HTTP.remote(expand(config['peptideshaker']['url'], version="1.16.45"), keep_local=False)
     output:
         jar=peptideshaker_path
     params:
