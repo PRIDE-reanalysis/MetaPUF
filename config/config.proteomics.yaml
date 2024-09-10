@@ -13,14 +13,12 @@ tmpdir: "./tmp"
 outputdir: "../test-run"
 
 thermo:
-    url: "https://github.com/compomics/ThermoRawFileParser/releases/download/{version}/ThermoRawFileParser.zip"
+    url: "https://github.com/compomics/ThermoRawFileParser/releases/download/v1.2.3/ThermoRawFileParser.zip"
     exe: "ThermoRawFileParser.exe"
-    version: "v1.2.3"
     tooldir: "workflow/tools/thermorawfileparser"
 searchgui:
-    url: "http://genesis.ugent.be/maven2/eu/isas/searchgui/SearchGUI/{version}/SearchGUI-{version}-mac_and_linux.tar.gz"
-    jar: "SearchGUI-{version}/SearchGUI-{version}.jar"
-    version: "3.3.20"
+    url: "http://genesis.ugent.be/maven2/eu/isas/searchgui/SearchGUI/3.3.20/SearchGUI-3.3.20-mac_and_linux.tar.gz"
+    jar: "SearchGUI-3.3.20/SearchGUI-3.3.20.jar"
     tooldir: "workflow/tools/searchgui"
     resources:
         crap_db: "workflow/resources/crap_db.fa"
@@ -56,7 +54,6 @@ searchgui:
         msgf_num_ptms: 2
         comet_num_ptms: 3
 peptideshaker:
-    url: "http://genesis.ugent.be/maven2/eu/isas/peptideshaker/PeptideShaker/{version}/PeptideShaker-{version}.zip"
-    jar: "PeptideShaker-{version}/PeptideShaker-{version}.jar"
-    version: "1.16.45"
+    url: "http://genesis.ugent.be/maven2/eu/isas/peptideshaker/PeptideShaker/1.16.45/PeptideShaker-1.16.45.zip"
+    jar: "PeptideShaker-1.16.45/PeptideShaker-1.16.45.jar"
     tooldir: "workflow/tools/peptideshaker"
