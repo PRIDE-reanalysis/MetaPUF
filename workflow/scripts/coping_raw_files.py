@@ -68,7 +68,7 @@ def thermorawfileparser(exe_file, info_file, input_folder, output_folder):
             # download the raw files if they are not provided locally.
             commandline = ""
             for url in samples[sample]:
-                commandline = "wget -P " + folder + " -i " + url + ";"
+                commandline += "wget -P " + folder + " -i " + url + ";"
 
             commandline += " mono " + exe_file + " -d=" + folder + " -o=" + folder
             # -f=1 means mzML format file
