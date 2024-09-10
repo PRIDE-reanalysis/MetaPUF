@@ -19,7 +19,7 @@ thermorawfileparser_tool = config['thermo']['tooldir']
 
 rule download_thermorawfileparser:
     input:
-        exe_zip=HTTP.remote(expand(config['thermo']['url'], version=config['thermo']['version']), keep_local=False)
+        exe_zip=HTTP.remote(expand(config['thermo']['url'], version="v1.2.3"), keep_local=False)
     output:
         exe=thermorawfileparser_path
     params:
