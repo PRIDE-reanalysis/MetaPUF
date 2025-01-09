@@ -55,6 +55,10 @@ bsub -n 4 -R "rusage[mem=4096]" -J metapuf -u $USER -o job.log -e job.err snakem
 
 - Tips: IF the pipeline got collapsed during running, you can always try to run a dry-run `Snakemake  -np` first to check how many rules have been successful executed, and if you are sure that some files are generated correctly, you can use `snakemake --cleanup-metadata <filenames>` to skip these files to be re-generated. However, sometimes `snakemake --cleanup-metadata <filenames>` doesn't work, you can also try to manually delete the `.snakemake/incomplete` directory.
 
+## Distributing and visualising the results
+This repository also contains a utility for packaging the pipeline's output GFF files as [RO-Crate](https://www.researchobject.org/ro-crate/), suitable for distribution and visualisation on the [MGnify](https://www.ebi.ac.uk/metagenomics/) website.
+See [utils/package_as_rocrate/](utils/package_as_rocrate/README.md) for full details.
+
 # Development installation
 ```shell
 git clone https://github.com/PRIDE-reanalysis/MetaPUF.git
